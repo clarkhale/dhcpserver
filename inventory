@@ -1,0 +1,6 @@
+
+[dhcpa]
+servera.private.opequon.net
+
+[dhcpb]
+serverb.private.opequon.net
