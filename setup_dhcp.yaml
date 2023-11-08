@@ -20,6 +20,11 @@
         name: dhcpd
         state: started
         enabled: true
+    - name: Immediately disable it, so I dont mess up my network
+      ansible.builtin.service:
+        name: dhcpd
+        state: stopped
+        enabled: false
   handlers:
     - name: Restart dhcpd
       ansible.builtin.service:
