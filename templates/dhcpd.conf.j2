@@ -8,8 +8,8 @@
 authoritative;
 
 # option definitions common to all supported networks...
-option domain-name {{ dhcp_domain_name }};
-option domain-name-servers {{ dhcp_dns_servers }};
+option domain-name "{{ dhcp_domain_name }}";
+option domain-name-servers "{{ dhcp_dns_servers }}";
 
 default-lease-time 600;
 max-lease-time 7200;
