@@ -1,10 +1,27 @@
 ---
 - name: test
+  become: yes
   hosts: 
     - zone_a
     - zone_b
   tasks:
+    - name: Ensure DHCP Package is at latest version
+      ansible.builtin.package:
+        name: dhcp-server
+        state: present
+    - name: Enable DHCP Service
+      ansible.builtin.service:
+        name: dhcpd
+        state: started
+        enabled: true
     - name: Create DHCP Configuration from Template
       template:
         src: dhcpd.conf.j2
         dest: /etc/dhcp/dhcpd.conf
+      notify:
+        - Restart dhcpd
+  handlers:
+    - name: Restart dhcpd
+      ansible.builtin.service:
+        name: dhcpd
+        state: restarted
