@@ -1,6 +1,8 @@
 ---
 - name: test
-  hosts: all
+  hosts: 
+    - zone_a
+    - zone_b
   tasks:
     - name: Create DHCP Configuration from Template
       template:
