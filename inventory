@@ -1,6 +1,6 @@
 
-[dhcpa]
+[zone_a]
 servera.private.opequon.net
 
-[dhcpb]
+[zone_b]
 serverb.private.opequon.net

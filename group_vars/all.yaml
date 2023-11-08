@@ -1,0 +1,5 @@
+---
+dhcp_domain_name: "example.com"
+# Linux supports a max of 3 DNS servers
+# Comma separated string
+dhcp_dns_server:  "8.8.8.8, 8.8.4.4"
