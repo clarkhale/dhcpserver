@@ -9,17 +9,17 @@
       ansible.builtin.package:
         name: dhcp-server
         state: present
-    - name: Enable DHCP Service
-      ansible.builtin.service:
-        name: dhcpd
-        state: started
-        enabled: true
     - name: Create DHCP Configuration from Template
       template:
         src: dhcpd.conf.j2
         dest: /etc/dhcp/dhcpd.conf
       notify:
         - Restart dhcpd
+    - name: Enable DHCP Service
+      ansible.builtin.service:
+        name: dhcpd
+        state: started
+        enabled: true
   handlers:
     - name: Restart dhcpd
       ansible.builtin.service:
