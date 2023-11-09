@@ -1,6 +1,22 @@
 
-[zone_a]
-servera.private.opequon.net
+[NY_DEV]
+primary.fqdn.example.com
+backup.fqdn.example.com
 
-[zone_b]
-serverb.private.opequon.net
+[NY_PSON]
+
+
+[NY_NPSN]
+
+[NY_SHSN]
+
+
+[CH_DEV]
+
+
+[CH_PSON]
+
+
+[CH_NPSN]
+
+[CH_SHSN]
